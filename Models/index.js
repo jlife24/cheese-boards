@@ -4,8 +4,8 @@ const { Cheese } = require("./Cheese.js");
 
 User.hasMany(Board);
 Board.belongsTo(User);
-Board.belongsToMany(Cheese);
-Cheese.belongsToMany(Board);
+Board.belongsToMany(Cheese, { through: "cheeeseTable" });
+Cheese.belongsToMany(Board, { through: "cheeseTable" });
 
 // Student.belongsToMany(Teacher, {through: “teacher_student”});
 module.exports = { User, Board, Cheese };
